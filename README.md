@@ -1,4 +1,4 @@
-# ChatBotMakerspace
+# ChatbotMakerspace
 
 This repository provides a GitHub Codespace environment prepared to develop a transactional chatbot using **[Rasa Open Source](https://rasa.com/docs/rasa/)** for conversational flow and **[Node-RED](https://nodered.org)** for custom actions.
 
