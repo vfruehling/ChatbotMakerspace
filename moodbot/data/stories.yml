@@ -2,29 +2,61 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: "intro"
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: greet
+    - action: utter_ask_name
+    - intent: tell_name
+    - action: utter_greet  
 
-- story: sad path 1
+- story: "user is happy" 
   steps:
-  - intent: greet
-  - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
+    - action: utter_goodbye
+
+- story: sad sporty guy, cheered up by sports
+  steps:
   - intent: mood_unhappy
+  - action: utter_ask_sports
+  - intent: affirm
+  - action: utter_go_walk
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_goodbye
+
+- story: sad sporty guy, not cheered up by sports,  finally happy
+  steps:
+  - intent: mood_unhappy
+  - action: utter_ask_sports
+  - intent: affirm
+  - action: utter_go_walk
+  - action: utter_did_that_help
+  - intent: deny
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
+  - action: utter_goodbye
 
-- story: sad path 2
+- story: sad unsporty guy is happy 
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: mood_unhappy
+  - action: utter_ask_sports
+  - intent: deny
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_goodbye
+
+- story: sad, hopeless
+  steps:
+  - intent: mood_unhappy
+  - action: utter_ask_sports
+  - intent: deny
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_goodbye 
